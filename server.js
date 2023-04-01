@@ -20,6 +20,11 @@ const PORT = process.env.PORT || 5000;
 
 // Routes for users
 
+app.get('/', async (req, res) => {
+  const users = await User.find();
+  res.send(users);
+});
+
 app.get('/users', async (req, res) => {
   const users = await User.find();
   res.send(users);
